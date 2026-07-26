@@ -3,12 +3,225 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Professional website</title>
+  <title>Tina Cisneros | Professional Website</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1f2937;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 20px 7%;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .site-name {
+      margin: 0;
+      color: #123f91;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      margin-left: 24px;
+      color: #1f2937;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #123f91;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+      min-height: 500px;
+      padding: 70px 10%;
+      background: #f7f8fa;
+    }
+
+    .hero-text {
+      max-width: 650px;
+    }
+
+    .hero h1 {
+      margin: 0 0 16px;
+      color: #123f91;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 3.7rem;
+      line-height: 1.1;
+    }
+
+    .gold-line {
+      width: 70px;
+      height: 4px;
+      margin-bottom: 22px;
+      background: #d9a514;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    .hero img {
+      width: 300px;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+    }
+
+    section {
+      padding: 65px 10%;
+    }
+
+    section h2 {
+      margin-top: 0;
+      color: #123f91;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2.2rem;
+      border-bottom: 3px solid #d9a514;
+      padding-bottom: 10px;
+    }
+
+    .education-card {
+      max-width: 850px;
+      padding: 28px;
+      background: #f7f8fa;
+      border-left: 5px solid #d9a514;
+      border-radius: 4px;
+    }
+
+    .education-card h3 {
+      margin-top: 0;
+      color: #1f2937;
+    }
+
+    .linkedin-button {
+      display: inline-block;
+      padding: 12px 22px;
+      background: #123f91;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .linkedin-button:hover {
+      background: #0d3274;
+    }
+
+    footer {
+      padding: 26px;
+      text-align: center;
+      background: #123f91;
+      color: #ffffff;
+    }
+
+    @media (max-width: 800px) {
+      header,
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px 10px;
+      }
+
+      .hero {
+        padding: 50px 8%;
+      }
+
+      .hero h1 {
+        font-size: 2.7rem;
+      }
+
+      .gold-line {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero img {
+        width: 250px;
+        height: 300px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <header>
+    <p class="site-name">Tina Cisneros</p>
+
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
   <main>
-    <h1>Your professional website is coming soon</h1>
-    <p>This page is the starting point for my people analytics project.</p>
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h1>Tina Cisneros</h1>
+        <div class="gold-line"></div>
+        <p>
+          Senior undergraduate student at California State University,
+          Bakersfield pursuing a Bachelor of Science in Human Resource Management.
+        </p>
+      </div>
+
+      <img
+        src="tina-headshot.png"
+        alt="Professional headshot of Tina Cisneros">
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+
+      <div class="education-card">
+        <h3>California State University, Bakersfield</h3>
+        <p><strong>Degree:</strong> Bachelor of Science in Human Resource Management</p>
+        <p><strong>Academic level:</strong> Senior undergraduate student</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+
+      <p>Connect with me on LinkedIn.</p>
+
+      <a
+        class="linkedin-button"
+        href="https://www.linkedin.com/in/tina-marie-cisneros-08b0172b7"
+        target="_blank"
+        rel="noopener noreferrer">
+        View My LinkedIn
+      </a>
+    </section>
   </main>
+
+  <footer>
+    <p>&copy; 2026 Tina Cisneros</p>
+  </footer>
 </body>
 </html>
