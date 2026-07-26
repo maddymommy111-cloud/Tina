@@ -3,76 +3,101 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Tina Cisneros | Professional Website</title>
 
   <style>
+    :root {
+      --blue: #123f91;
+      --dark-blue: #0d3274;
+      --gold: #d9a514;
+      --text: #1f2937;
+      --light: #f6f8fb;
+      --white: #ffffff;
+      --border: #dfe4ea;
+    }
+
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      color: #1f2937;
-      background: #ffffff;
-      line-height: 1.6;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
     }
 
     header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 24px;
-      padding: 20px 7%;
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
+      padding: 18px 7%;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
     }
 
     .site-name {
       margin: 0;
-      color: #123f91;
+      color: var(--blue);
       font-family: Georgia, "Times New Roman", serif;
       font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
     }
 
     nav a {
-      margin-left: 24px;
-      color: #1f2937;
+      color: var(--text);
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    nav a:hover {
-      color: #123f91;
+    nav a:hover,
+    nav a:focus {
+      color: var(--blue);
     }
 
     .hero {
+      min-height: 520px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 60px;
-      min-height: 500px;
       padding: 70px 10%;
-      background: #f7f8fa;
+      background: var(--light);
     }
 
     .hero-text {
-      max-width: 650px;
+      max-width: 670px;
     }
 
     .hero h1 {
       margin: 0 0 16px;
-      color: #123f91;
+      color: var(--blue);
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 3.7rem;
+      font-size: clamp(2.8rem, 7vw, 4rem);
       line-height: 1.1;
     }
 
     .gold-line {
-      width: 70px;
+      width: 75px;
       height: 4px;
-      margin-bottom: 22px;
-      background: #d9a514;
+      margin-bottom: 24px;
+      background: var(--gold);
     }
 
     .hero p {
@@ -84,75 +109,145 @@
       width: 300px;
       height: 360px;
       object-fit: cover;
+      object-position: center;
       border-radius: 8px;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.17);
     }
 
     section {
-      padding: 65px 10%;
+      padding: 70px 10%;
+      scroll-margin-top: 90px;
     }
 
     section h2 {
-      margin-top: 0;
-      color: #123f91;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 2.2rem;
-      border-bottom: 3px solid #d9a514;
+      margin: 0 0 36px;
       padding-bottom: 10px;
+      color: var(--blue);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2.3rem;
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+      gap: 28px;
     }
 
     .education-card {
-      max-width: 850px;
       padding: 28px;
-      background: #f7f8fa;
-      border-left: 5px solid #d9a514;
-      border-radius: 4px;
+      background: var(--light);
+      border-top: 5px solid var(--gold);
+      border-radius: 7px;
+      box-shadow: 0 5px 16px rgba(0, 0, 0, 0.08);
     }
 
     .education-card h3 {
+      margin: 0 0 18px;
+      color: var(--blue);
+      font-size: 1.35rem;
+    }
+
+    .credential {
+      margin-bottom: 22px;
+    }
+
+    .credential:last-child {
+      margin-bottom: 0;
+    }
+
+    .credential-title {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .credential-detail {
+      margin: 4px 0;
+    }
+
+    .year {
+      margin: 4px 0 0;
+      color: #4b5563;
+      font-weight: 600;
+    }
+
+    .achievements {
+      background: var(--white);
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+      gap: 28px;
+    }
+
+    .detail-card {
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      background: var(--white);
+    }
+
+    .detail-card h3 {
       margin-top: 0;
-      color: #1f2937;
+      color: var(--blue);
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .contact {
+      text-align: center;
+      background: var(--light);
     }
 
     .linkedin-button {
       display: inline-block;
-      padding: 12px 22px;
-      background: #123f91;
-      color: #ffffff;
+      margin-top: 12px;
+      padding: 13px 24px;
+      background: var(--blue);
+      color: var(--white);
       text-decoration: none;
-      border-radius: 4px;
+      border-radius: 5px;
       font-weight: 700;
     }
 
-    .linkedin-button:hover {
-      background: #0d3274;
+    .linkedin-button:hover,
+    .linkedin-button:focus {
+      background: var(--dark-blue);
     }
 
     footer {
       padding: 26px;
       text-align: center;
-      background: #123f91;
-      color: #ffffff;
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    footer p {
+      margin: 0;
     }
 
     @media (max-width: 800px) {
-      header,
-      .hero {
+      header {
         flex-direction: column;
         text-align: center;
       }
 
-      nav a {
-        display: inline-block;
-        margin: 8px 10px;
+      nav {
+        justify-content: center;
+        gap: 16px;
       }
 
       .hero {
-        padding: 50px 8%;
-      }
-
-      .hero h1 {
-        font-size: 2.7rem;
+        flex-direction: column;
+        padding: 55px 8%;
+        text-align: center;
       }
 
       .gold-line {
@@ -164,29 +259,37 @@
         width: 250px;
         height: 300px;
       }
+
+      section {
+        padding: 55px 8%;
+      }
     }
   </style>
 </head>
 
 <body>
+
   <header>
     <p class="site-name">Tina Cisneros</p>
 
     <nav aria-label="Main navigation">
       <a href="#home">Home</a>
       <a href="#education">Education</a>
+      <a href="#achievements">Achievements</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
+
     <section class="hero" id="home">
       <div class="hero-text">
         <h1>Tina Cisneros</h1>
         <div class="gold-line"></div>
+
         <p>
           Senior undergraduate student at California State University,
-          Bakersfield pursuing a Bachelor of Science in Human Resource Management.
+          Bakersfield, pursuing a Bachelor of Science in Human Resource Management.
         </p>
       </div>
 
@@ -198,17 +301,133 @@
     <section id="education">
       <h2>Education</h2>
 
-      <div class="education-card">
-        <h3>California State University, Bakersfield</h3>
-        <p><strong>Degree:</strong> Bachelor of Science in Human Resource Management</p>
-        <p><strong>Academic level:</strong> Senior undergraduate student</p>
+      <div class="education-grid">
+
+        <article class="education-card">
+          <h3>California State University, Bakersfield</h3>
+
+          <div class="credential">
+            <p class="credential-title">
+              Bachelor of Science
+            </p>
+
+            <p class="credential-detail">
+              Human Resource Management
+            </p>
+
+            <p class="year">In Progress</p>
+          </div>
+        </article>
+
+        <article class="education-card">
+          <h3>Taft College</h3>
+
+          <div class="credential">
+            <p class="credential-title">
+              Associate of Science
+            </p>
+
+            <p class="credential-detail">
+              Business Administration for Transfer
+            </p>
+
+            <p class="year">2020</p>
+          </div>
+
+          <div class="credential">
+            <p class="credential-title">
+              Associate of Arts
+            </p>
+
+            <p class="credential-detail">
+              Liberal Arts with an Emphasis in Business and Technology
+            </p>
+
+            <p class="year">2018</p>
+          </div>
+        </article>
+
+        <article class="education-card">
+          <h3>San Joaquin Valley College</h3>
+
+          <div class="credential">
+            <p class="credential-title">
+              Associate of Science
+            </p>
+
+            <p class="credential-detail">
+              Clinical and Administrative Medical Assisting
+            </p>
+
+            <p class="year">1999</p>
+          </div>
+        </article>
+
       </div>
     </section>
 
-    <section id="contact">
+    <section class="achievements" id="achievements">
+      <h2>Academic Achievements</h2>
+
+      <div class="details-grid">
+
+        <article class="detail-card">
+          <h3>Honors and Activities</h3>
+
+          <ul>
+            <li>
+              CSUB College of Business and Public Administration Dean's List,
+              Spring 2024
+            </li>
+
+            <li>
+              CSUB College of Business and Public Administration Dean's List,
+              Fall 2024
+            </li>
+
+            <li>
+              Member, CSUB Society of Human Resources
+            </li>
+
+            <li>
+              Taft College Alumni
+            </li>
+          </ul>
+        </article>
+
+        <article class="detail-card">
+          <h3>Certificates</h3>
+
+          <ul>
+            <li>Taft College Certificate in Management, 2019</li>
+            <li>
+              Taft College Certificate in Management Customer Service, 2017
+            </li>
+          </ul>
+        </article>
+
+        <article class="detail-card">
+          <h3>Relevant Coursework</h3>
+
+          <ul>
+            <li>Human Resource Management</li>
+            <li>Organizational Behavior</li>
+            <li>Diversity in Business Organizations</li>
+            <li>Operations Management</li>
+            <li>Total Quality Management</li>
+            <li>Business Ethics</li>
+            <li>Technical and Report Writing</li>
+            <li>Career and Managerial Skills</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
       <h2>Contact</h2>
 
-      <p>Connect with me on LinkedIn.</p>
+      <p>Connect with me through my professional LinkedIn profile.</p>
 
       <a
         class="linkedin-button"
@@ -218,10 +437,12 @@
         View My LinkedIn
       </a>
     </section>
+
   </main>
 
   <footer>
     <p>&copy; 2026 Tina Cisneros</p>
   </footer>
+
 </body>
 </html>
